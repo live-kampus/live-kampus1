@@ -16,6 +16,7 @@ import { UserService } from './users/user.service';
 import { FormsModule } from '@angular/forms';
 import { CityService } from './city/city.service';
 import { SchoolService } from './school/school.service';
+import { EventService } from './event/event.service';
 
 @NgModule({
     declarations: [
@@ -39,10 +40,11 @@ import { SchoolService } from './school/school.service';
         AdminComponent,
         RouterModule
     ],
-    providers:[
+    providers: [
         UserService,
         CityService,
-        SchoolService
+        SchoolService,
+        EventService
     ]
 })
 export class AdminModule {

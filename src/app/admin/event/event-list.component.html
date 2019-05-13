@@ -31,9 +31,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Dance event</td>
+                        <tr *ngFor="let event of events ">
+                            <td>{{event.eventId}}</td>
+                            <td>{{event.eventName}}</td>
                             <td>
                                 <button type="button" routerLink="eventdetails" class="btn btn-primary view-btn">View</button>
                             </td>
