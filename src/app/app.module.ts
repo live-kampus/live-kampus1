@@ -11,6 +11,7 @@ import { WelcomeLoginComponent } from './welcome-login.component';
 import { UserService } from './admin/users/user.service';
 import { LogoutComponent } from './logout.component';
 import { LoginService } from './app.service';
+import { WelcomeComponent } from './welcome.component';
 
 
 
@@ -18,7 +19,8 @@ import { LoginService } from './app.service';
   declarations: [
     AppComponent,
    WelcomeLoginComponent,
-   LogoutComponent
+   LogoutComponent,
+   WelcomeComponent
   ],
   imports: [
     BrowserModule,
