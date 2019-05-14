@@ -4,8 +4,8 @@ export class UserProfile{
     profile: string;
     postProfile:string;
     timelinePost:string;
-   caption:string;
-   tag:string;
+    caption:string;
+    tag:string;
     timeline:string;
     friends:Friends[];
     city:string;
@@ -13,14 +13,7 @@ export class UserProfile{
     published:Date;
 }
 
-// export class posts{
-//     timelinePost:string;
-//     caption:string;
-//     tag:string;
-// }
-
 export class Friends{
     name:string;
     dp:string;
 }
-

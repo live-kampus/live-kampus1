@@ -7,6 +7,7 @@ import { UserEventlistComponent } from './event/user-event-list.component';
 import { NotificationComponent } from './notification/notification.component';
 import { ChatComponent } from './chat/chat.component';
 import { RoomSpaceComponent } from './Room-space/room-space.component';
+import { LogoutComponent } from '../logout.component';
 
 
 export const userRoutes: Routes = [
@@ -22,6 +23,6 @@ export const userRoutes: Routes = [
 
 
     ]
-}
+},{path: 'logout', component: LogoutComponent}
 ];
 

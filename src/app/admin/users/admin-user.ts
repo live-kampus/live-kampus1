@@ -11,4 +11,5 @@ export class AdminUser {
     userSchoolName : string;
     userDoB : string;
     userBio : string
+   
 }

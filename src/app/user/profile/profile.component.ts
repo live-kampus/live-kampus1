@@ -8,14 +8,14 @@ import { UserProfile } from './profile';
     styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent{
-    profiles:UserProfile[];
+    profile:UserProfile;
 
     constructor(private profileService:ProfileService,private route:ActivatedRoute){}
 
     ngOnInit(){
-        this.profileService.getprofile().subscribe(data=>{
+        this.profileService.findProfileByUserName().subscribe((data)=>{
             console.log(data);
-            this.profiles=data;
+            this.profile=data;
         },err=>{
             console.log(err);
         })

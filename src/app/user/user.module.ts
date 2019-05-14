@@ -14,6 +14,7 @@ import { EventService } from './event/event.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProfileService } from './profile/profile.service';
+import { HomeService } from './home/home.service';
 
 
 
@@ -41,11 +42,12 @@ import { ProfileService } from './profile/profile.service';
     ],
     providers:[
         EventService,
-        ProfileService
+        ProfileService,
+        HomeService
     ],
     exports: [
         UserComponent,
-        RouterModule
+        RouterModule,
     ]
 })
 export class UserModule {

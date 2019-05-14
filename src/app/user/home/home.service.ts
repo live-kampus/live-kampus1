@@ -1,24 +1,23 @@
-    
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AdminUser } from './admin-user';
-import { UserProfile } from './profile';
+import { UserProfile } from './profiles';
+
+
+
 
 
 @Injectable()
-export class UserService{
+export class HomeService{
 
-    baseUrl="http://localhost:8087/profile"
+
+    baseUrl = "http://localhost:8087/profile/";
 
     constructor(private httpclient:HttpClient){}
 
-    
     getprofiles():Observable<UserProfile[]>{
         return this.httpclient.get<UserProfile[]>(this.baseUrl);
     }
 
-    findUserById(userId : number): Observable<UserProfile> {
-        return this.httpclient.get<UserProfile>(this.baseUrl+ userId);
-    }
+    
 }

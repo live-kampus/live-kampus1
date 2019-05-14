@@ -8,15 +8,17 @@ import { FormsModule } from '@angular/forms';
 import { UserModule } from './user/user.module';
 import { RegistrationModule } from './registration/registration.module';
 import { WelcomeLoginComponent } from './welcome-login.component';
-import { LoginService } from './welcome-login.service';
 import { UserService } from './admin/users/user.service';
+import { LogoutComponent } from './logout.component';
+import { LoginService } from './app.service';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-   WelcomeLoginComponent
+   WelcomeLoginComponent,
+   LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -24,11 +26,12 @@ import { UserService } from './admin/users/user.service';
     FormsModule,
     UserModule,
     RegistrationModule,
+   
 
 
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [LoginService,UserService],
+  providers: [LoginService,UserService,],
   bootstrap: [
     AppComponent,
     

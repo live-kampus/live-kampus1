@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from './user.service';
 import { ActivatedRoute } from '@angular/router';
-import { AdminUser } from './admin-user';
+import { UserProfile } from './profile';
 
 @Component({
     selector:'user-details',
@@ -11,7 +11,7 @@ import { AdminUser } from './admin-user';
 export class UserDetailsComponent{
 
 
-    users:AdminUser[];
+    profile:UserProfile;
 
     constructor(private userService:UserService,
         private route: ActivatedRoute) { }
@@ -22,9 +22,9 @@ export class UserDetailsComponent{
             this.route.paramMap.subscribe((map)=>{
                 let userId=Number(map.get("userId")); 
                 console.log(userId); 
-                this.userService.findUserById().subscribe((data)=>{
-                    this.users=data;
-    
+                this.userService.findUserById(userId).subscribe((data)=>{
+                    this.profile=data;
+                    console.log(data);
                 })  
             });
             

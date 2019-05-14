@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { CityService } from './city/city.service';
 import { SchoolService } from './school/school.service';
 import { EventService } from './event/event.service';
+import { ProfileComponent } from '../user/profile/profile.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,7 @@ import { EventService } from './event/event.service';
     imports: [
         BrowserModule,
         RouterModule.forChild(adminRoutes),
-        FormsModule
+        FormsModule,
     ],
     exports: [
         AdminComponent,

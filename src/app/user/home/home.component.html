@@ -38,16 +38,16 @@
                 </div>
             </div>
         </div>
-        <div class="loadMore">
+        <div class="loadMore" *ngFor= "let home of profile">
             <div class="central-meta item">
                 <div class="user-post">
                     <div class="friend-info">
                         <figure>
-                            <img src="assets/images/user.jpg" alt="">
+                            <img src="assets/images/user.jp" alt="">
                         </figure>
                         <div class="friend-name">
-                            <a href="time-line.html" title="">Janice Griffith</a>
-                            <span>published: june,2 2018 19:PM</span>
+                            <a href="time-line.html" title="">{{home.userName}}</a>
+                            <span>{{home.published}}</span>
                         </div>
                         <div class="post-meta">
                             <img src="assets/images/user-post.jpg" alt="">
@@ -63,7 +63,7 @@
                             </div>
                             <div class="description">
                                 <p>
-                                    World's most beautiful car in Curabitur <a href="#" title="">#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website
+                                 <a href="#" title="">{{home.tag}}</a>{{home.caption}}
                                 </p>
                             </div>
                         </div>

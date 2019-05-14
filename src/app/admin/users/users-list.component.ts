@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { UserProfile } from './profile';
+import { Observable } from 'rxjs';
+import { UserService } from './user.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
     // selector:'user-list',
@@ -7,19 +13,17 @@ import { Component } from '@angular/core';
 })
 export class UserListComponent{
 
-    users= [
-        {
-            "userId": 1,
-            "userName": "Akshay"
-        },
-        {
-            "userId": 2,
-            "userName": "Abbas"
-        },
-        {
-            "userId": 3,
-            "userName": "Kapil"
-        }
-    ]
+    profile:UserProfile[];
+
+    constructor(private profileService:UserService,private route:ActivatedRoute){}
+
+    ngOnInit(){
+        this.profileService.getprofiles().subscribe((data)=>{
+            console.log(data);
+            this.profile=data;
+        },err=>{
+            console.log(err);
+        })
+}
 
 }
