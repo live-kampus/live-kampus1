@@ -2,6 +2,7 @@
     <h2 class="cheader">
         City List
     </h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCity">Add City</button>
     <table class="table table-bordered city-table">
         <thead class="thead-light">
             <tr>
@@ -17,16 +18,19 @@
                 <td>{{city.cityId}}</td>
                 <td>{{city.cityName}}</td>
                 <td>
-                    <button type="button" class="btn btn-primary view-btn" data-toggle="modal" data-target="#viewModal">View</button>
+                    <button type="button" class="btn btn-primary view-btn" data-toggle="modal"
+                    (click)="viewbtn(city.cityId)" data-target="#viewModal">View</button>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary edit-btn" data-toggle="modal" data-target="#editModal">Edit</button>
+                    <button type="button" class="btn btn-primary edit-btn" (click)="editbtn(city.cityId)" data-toggle="modal" data-target="#editModal">Edit</button>
                 </td>
                 <td>
-                    <label class="switch">
+                    <!-- <label class="switch">
                         <input type="checkbox" checked>
                         <span class="slider round"></span>
-                    </label>
+                    </label> -->
+                    <button type="button" class="btn btn-primary del"  (click)="deleteCity(city)">Delete</button>
+                    
                 </td>
             </tr>
         </tbody>
@@ -42,7 +46,7 @@
                 </div>
                 <div class="modal-body">
                     <table class="table">
-                        <tbody *ngFor="let city of cities" >
+                        <tbody >
                             <tr>
                                 <td>City Code</td>
                                 <td>{{city.cityId}}</td>
@@ -72,18 +76,18 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form (ngSubmit)="updateCity()" #CityForm="ngForm">
                         <div class="form-group">
                             <label for="cityc" class="form-label">City Code</label>
-                            <input type="text" class="form-control" id="cityc">
+                            <input type="text" class="form-control" id="cityc" [(ngModel)]="city.cityId" name="city_id" value="{{city.cityId}}">
                         </div>
                         <div class="form-group">
                             <label for="cityn" class="form-label">City Name</label>
-                            <input type="text" class="form-control" id="cityn">
+                            <input type="text" class="form-control" id="cityn" [(ngModel)]="city.cityName" name="city_name">
                         </div>
                         <div class="form-group">
                             <label for="citys" class="form-label">State</label>
-                            <input type="text" class="form-control" id="citys">
+                            <input type="text" class="form-control" id="citys" [(ngModel)]="city.cityState" name="city_state">
                         </div>
                         <button type="submit" class="btn btn-primary">Update</button>
                     </form>
@@ -92,4 +96,32 @@
         </div>
     </div>
     
+    <div class="modal fade" id="addCity" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add City</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form (ngSubmit)="addCity()" #CityForm="ngForm">
+                        <div class="form-group">
+                            <label for="cityc" class="form-label">City Code</label>
+                            <input type="text" class="form-control" id="cityc" [(ngModel)]="city.cityId" name="city_id">
+                        </div>
+                        <div class="form-group">
+                            <label for="cityn" class="form-label">City Name</label>
+                            <input type="text" class="form-control" id="cityn" [(ngModel)]="city.cityName" name="city_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="citys" class="form-label">State</label>
+                            <input type="text" class="form-control" id="citys" [(ngModel)]="city.cityState" name="city_state">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+    
+</div>

@@ -6,19 +6,28 @@ import { City } from './city';
 @Injectable()
 export class CityService  {
 
-    baseUrl="http://localhost:8086/city"
+    baseUrl="http://localhost:8086/"
 
     constructor(private http:HttpClient){}
 
-    
+    addNewCity(city:City):Observable<City>{
+        return this.http.post<City>(this.baseUrl+"city",city)
+    }
+
     findCity():Observable<City[]>{
-
-        return this.http.get<City[]>(this.baseUrl);
-
+        return this.http.get<City[]>(this.baseUrl+"city");
     }
 
-    findCityById(): Observable<City[]> {
-        return this.http.get<City[]>(this.baseUrl);
+    findCityById(cityId:number): Observable<City> {
+        return this.http.get<City>(this.baseUrl+"city/"+cityId);
     }
 
+
+    editCity(city: City):Observable<City>{
+        return this.http.put<City>(this.baseUrl+"city",city);
+    }
+
+    deleteCityById(cityId:number):Observable<City>{
+        return this.http.delete<City>(this.baseUrl+"city/"+cityId);
+    }
 }
