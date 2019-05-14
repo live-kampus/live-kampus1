@@ -12,7 +12,7 @@ constructor(private userservice:LoginService){}
 authenticate(flag,email){
 
     if(flag){
-        sessionStorage.setItem('email',email)
+       
         return false;
     }
     else{

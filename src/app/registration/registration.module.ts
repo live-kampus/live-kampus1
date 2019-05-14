@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { registrationRoute } from './registration.route';
 import { RegistrationService } from './registration.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -11,8 +13,9 @@ import { FormsModule } from '@angular/forms';
         RegistrationComponent
     ],
     imports:[
+        BrowserModule,
+        FormsModule,
         RouterModule.forChild(registrationRoute),
-        FormsModule
     ],
     exports: [
         RegistrationComponent,

@@ -39,9 +39,11 @@ export class WelcomeLoginComponent{
           // alert("Login Successful");
           console.log(data);
           // alert(data.email);
+          this.user=data;
            if (data != null) {
             this.invalidLogin = this.authenticateService.authenticate(true,email);
             alert('logging in') 
+            sessionStorage.setItem('user',JSON.stringify(this.user));
              this.router.navigate(["user"]);
              }
              else
