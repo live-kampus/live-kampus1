@@ -6,7 +6,7 @@ import { UserEvent } from './user-event';
 @Injectable()
 export class EventService{
     
-    baseUrl = "http://localhost:8086/";
+    baseUrl = "http://localhost:8085/";
 
     constructor(private http:HttpClient){}
 
@@ -22,6 +22,11 @@ export class EventService{
     addNewEvent(event:UserEvent):Observable<UserEvent>{
         return this.http.post<UserEvent>(this.baseUrl + "event",event);
     }
+
+    getEventByName(eventName:string):Observable<UserEvent>{
+        return this.http.get<UserEvent>(this.baseUrl + "event/" + eventName) 
+    }
+
     
 
 }   

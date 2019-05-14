@@ -8,13 +8,13 @@ import { AdminUser } from './admin-user';
 @Injectable()
 export class UserService{
 
-    baseUrl="/assets/jsondata/userjson.json"
+    baseUrl="http://localhost:8087/"
 
     constructor(private http:HttpClient){}
 
     
     findUser():Observable<AdminUser[]>{
-        return this.http.get<AdminUser[]>(this.baseUrl);
+        return this.http.get<AdminUser[]>(this.baseUrl+"profile");
     }
 
     findUserById(): Observable<AdminUser[]> {

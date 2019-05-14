@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Schools } from './school';
 import { SchoolService } from './school.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -14,21 +14,19 @@ export class SchoolListComponent implements OnInit {
     school: Schools;
     schools: Schools[];
     constructor(private schoolService: SchoolService,
-                private route: ActivatedRoute) { }
+        private route: Router) { }
         ngOnInit(): void {
-            this.route.paramMap.subscribe((map) => {
-                const schoolId = Number(map.get('schoolId'));
-                console.log(schoolId);
-                this.schoolService.findSchoolById(schoolId).subscribe((data) => {
+                this.school= new Schools();
+                this.schoolService.findSchool().subscribe((data) => {
                     this.schools = data;
+                    console.log(data);
 
                 });
-            });
-        }
+            }
 
         viewbtn(schoolId: number) {
             this.schoolService.findSchoolById(schoolId).subscribe((data)=>{
-                this.schools = data;
+                this.school = data;
             });
         }
     }

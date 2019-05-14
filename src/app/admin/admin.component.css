@@ -82,3 +82,8 @@ li {
     position: relative;
     overflow: hidden;
 }
+
+
+a:not([href]):not([tabindex]) {
+    color: #fff;
+  }

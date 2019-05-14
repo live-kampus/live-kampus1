@@ -47,4 +47,11 @@ export class UserEventlistComponent implements OnInit {
             }
         })
     }
+
+    eventR(eventName:string){
+        
+        this.eventService.getEventByName(eventName).subscribe((data) =>{
+            this.event = data;
+        })
+    }
 }

@@ -3,6 +3,7 @@ import { RegistrationComponent } from './registration.component';
 import { RouterModule } from '@angular/router';
 import { registrationRoute } from './registration.route';
 import { RegistrationService } from './registration.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { RegistrationService } from './registration.service';
         RegistrationComponent
     ],
     imports:[
-        RouterModule.forChild(registrationRoute)
+        RouterModule.forChild(registrationRoute),
+        FormsModule
     ],
     exports: [
         RegistrationComponent,

@@ -26,14 +26,14 @@ export class RegistrationComponent {
                 console.log("success");
                 if(data!=null){
                     alert("done");
-                    this.router.navigate(["/home"]);
+                    this.router.navigate([""]);
                 }
                 
             });
         }
 
         xyz(){
-           this.router.navigate(["/home"]); 
+           this.router.navigate([""]); 
           }
 
 }

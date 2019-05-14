@@ -14,7 +14,7 @@
         </thead>
         <tbody *ngFor="let city of cities">
             <tr>
-                <td>{{city.cityCode}}</td>
+                <td>{{city.cityId}}</td>
                 <td>{{city.cityName}}</td>
                 <td>
                     <button type="button" class="btn btn-primary view-btn" data-toggle="modal" data-target="#viewModal">View</button>
@@ -45,7 +45,7 @@
                         <tbody *ngFor="let city of cities" >
                             <tr>
                                 <td>City Code</td>
-                                <td>{{city.cityCode}}</td>
+                                <td>{{city.cityId}}</td>
                             </tr>
                             <tr>
                                 <td>City Name</td>

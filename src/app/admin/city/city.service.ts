@@ -6,7 +6,7 @@ import { City } from './city';
 @Injectable()
 export class CityService  {
 
-    baseUrl="/assets/jsondata/cityjson.json"
+    baseUrl="http://localhost:8086/city"
 
     constructor(private http:HttpClient){}
 

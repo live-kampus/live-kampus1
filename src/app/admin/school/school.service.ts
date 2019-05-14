@@ -6,20 +6,19 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class SchoolService {
 
-    baseUrl="/assets/jsondata/schooljson.json";
-    baseUrl1="/assets/jsondata/schoolid.json";
+    baseUrl="http://localhost:8088";
 
     constructor(private http:HttpClient){}
 
     
     findSchool():Observable<Schools[]>{
 
-        return this.http.get<Schools[]>(this.baseUrl  );
+        return this.http.get<Schools[]>(this.baseUrl+"/school" );
 
     }
 
-    findSchoolById(schoolId:number): Observable<Schools[]> {
-        return this.http.get<Schools[]>(this.baseUrl);
+    findSchoolById(schoolId:number): Observable<Schools> {
+        return this.http.get<Schools>(this.baseUrl+"/school/"+schoolId);
     }
 
 }
