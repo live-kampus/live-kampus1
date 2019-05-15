@@ -32,6 +32,7 @@ export class UserEventlistComponent implements OnInit {
     addNewEvents() {
 
         console.log("success");
+        // this.event.eventPicture=document.getElementById("myfile").files[0].path;
         this.eventService.addNewEvent(this.event).subscribe((data) => {
             console.log(this.event);
             console.log("success");
@@ -55,5 +56,11 @@ export class UserEventlistComponent implements OnInit {
         })
     }
 
+    url:any;
+
+    readUrl(files) {
+        this.event.eventPicture = files[0];
+    }
+    
     
 }

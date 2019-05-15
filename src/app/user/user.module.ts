@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { ProfileService } from './profile/profile.service';
 import { HomeService } from './home/home.service';
 import { EditProfileComponent } from './profile/edit-profile.component';
+import { UserService } from './user.service';
 
 
 
@@ -45,7 +46,8 @@ import { EditProfileComponent } from './profile/edit-profile.component';
     providers:[
         EventService,
         ProfileService,
-        HomeService
+        HomeService,
+        UserService
     ],
     exports: [
         UserComponent,

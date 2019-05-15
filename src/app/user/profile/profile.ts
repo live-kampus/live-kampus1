@@ -8,7 +8,6 @@ export class UserProfile{
    caption:string;
    tag:string;
     timeline:string;
-    friends:Friends[];
     city:string;
     state:string;
     published:Date;
@@ -20,8 +19,5 @@ export class UserProfile{
 //     tag:string;
 // }
 
-export class Friends{
-    name:string;
-    dp:string;
-}
+
 

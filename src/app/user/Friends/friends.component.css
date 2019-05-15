@@ -320,7 +320,7 @@ form button {
 }
 
 .nearly-pepls {
-    display: inline-block;
+    display: block;
     width: 100%;
 }
 
@@ -393,4 +393,9 @@ a.add-butn.more-action {
     margin-top: 40px;
     width: 38%;
     padding: 0 13px;
+}
+
+.frndname {
+    margin-right: 56px;
+    vertical-align: middle;
 }

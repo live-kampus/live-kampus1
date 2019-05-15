@@ -10,7 +10,8 @@ import { UserProfile } from './profile';
 export class ProfileComponent{
     profile:UserProfile;
 
-    constructor(private profileService:ProfileService,private route:ActivatedRoute){}
+    constructor(private profileService:ProfileService,private route:ActivatedRoute,
+    ){}
 
     ngOnInit(){
         this.profileService.findProfileByEmail().subscribe((data)=>{

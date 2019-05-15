@@ -10,5 +10,7 @@ export class User{
     contact:number;
     gender:string;
     dob:number;
+    friends:string;
+    requests:string;
        
 }

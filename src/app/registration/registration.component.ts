@@ -26,7 +26,7 @@ export class RegistrationComponent {
                 console.log("success");
                 if(data!=null){
                     alert("done");
-                    this.router.navigate(["/user"]);
+                    this.router.navigate(["/login"]);
                 }
                 
             });

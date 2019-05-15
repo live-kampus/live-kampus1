@@ -6,5 +6,5 @@ export class UserEvent{
     eventDate:string;
     eventTime:Time;
 	eventhostedBy:string;
-	eventPicture:string;
+	eventPicture:File = null;
 }
