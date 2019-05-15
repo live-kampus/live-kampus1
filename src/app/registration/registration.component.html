@@ -1,8 +1,37 @@
 <div class="" id="login-page">
     
+<<<<<<< HEAD
     <div class="form-box">
       <div class="form-logo">
         <p class="text-center"><img src="../assets/images/lvk-logo.png" alt="logo"></p>
+=======
+  <div class="form-box">
+    <div class="form-logo">
+      <p class="text-center"><img src="../assets/images/lvk-logo.png" alt="logo"></p>
+    </div>
+    
+    <form (ngSubmit)="registerNewUser()" #userForm="ngForm" >
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="name">Name</label>
+          <input type="text" class="form-control box1" placeholder="Name" id="name" name="name" [(ngModel)]="user.name" #name="ngModel"  [class.is-invalid]="name.touched && name.invalid" required>
+          <div class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</div>
+        </div>
+        <div class="col-sm-6">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" placeholder="Email" id="email" name="email" [(ngModel)]="user.email" #email="ngModel"
+          [class.is-invalid]="email.touched && email.invalid" required>
+          <div class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" placeholder="address" id="address" name="address" #address="ngModel" 
+          [class.is-invalid]="address.touched && address.invalid" required [(ngModel)]="user.address">
+          <div class="text-danger" [class.d-none]="address.valid || address.untouched">Address is required</div>
+        </div>
+>>>>>>> 819d723cf94fa2c7ce75cd99dbd89958c655ecf9
       </div>
       
       <form (ngSubmit)="registerNewUser()" #userForm="ngForm" >
@@ -19,6 +48,7 @@
             <div class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</div>
           </div>
         </div>
+
         <div class="row">
           <div class="col-sm-12">
             <label for="address">Address</label>
@@ -26,6 +56,18 @@
             [class.is-invalid]="address.touched && address.invalid" required [(ngModel)]="user.address">
             <div class="text-danger" [class.d-none]="address.valid || address.untouched">Address is required</div>
           </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="contact">Contact Number</label>
+          <input type="number" class="form-control" placeholder="contact no" id="contact" name="contact"
+           [(ngModel)]="user.contact" #phone="ngModel" pattern="^\d{10}$"
+           [class.is.invalid]="phone.touched && phone.invalid" required/>
+           <div *ngIf="phone.errors && (phone.touched)">
+            <div class="text-danger" *ngIf="phone.errors?.required">Phone no. is required</div>
+            <div class="text-danger" *ngIf="phone.errors?.pattern">Phone no. must be 10 digit</div>
+
         </div>
         <div class="row">
           <div class="col-sm-6">
@@ -79,6 +121,7 @@
             <input type="password" class="form-control" placeholder="Password" id="password" name="password" [(ngModel)]="user.password">
           </div>
         </div>
+<<<<<<< HEAD
         <div class="row">
           <div class="col-sm-6">
             <legend class="text-label">Gender</legend>
@@ -107,6 +150,21 @@
         </a>
       </form>
     </div>
+=======
+        <div class="col-sm-6">
+          <label for="Dob">Date Of Birth</label>
+          <input type="date" class="form-control" placeholder="DOB" id="dob" name="dob" [(ngModel)]="user.dateOfBirth"
+          #dob="ngModel" [class.is-invalid]="dob.touched && dob.invalid" required>
+          <div class="text-danger" [class.d-none]="dob.valid || dob.untouched"> Date of Birth is required</div>
+        </div>
+      </div>
+      <input type="submit" class="btn btn-social" value="SIGNUP" [disabled]="userForm.form.invalid">
+
+      <a class="login-action" title="Signi in" style="cursor: pointer" routerLink="home" (click)="xyz()" >
+        Have an account
+      </a>
+    </form>
+>>>>>>> 819d723cf94fa2c7ce75cd99dbd89958c655ecf9
   </div>
   
   <footer class="login-footer text-center">

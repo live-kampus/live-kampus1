@@ -12,8 +12,9 @@ import { BrowserModule } from '@angular/platform-browser';
     declarations: [
         RegistrationComponent
     ],
-    imports:[
+    imports: [
         BrowserModule,
+        FormsModule,
         FormsModule,
         RouterModule.forChild(registrationRoute),
     ],
@@ -21,6 +22,7 @@ import { BrowserModule } from '@angular/platform-browser';
         RegistrationComponent,
         RouterModule
     ],
+    // tslint:disable-next-line:whitespace
     providers:[
         RegistrationService
     ]
