@@ -44,7 +44,12 @@ export class WelcomeLoginComponent{
             this.invalidLogin = this.authenticateService.authenticate(true,email);
             alert('logging in') 
             sessionStorage.setItem('user',JSON.stringify(this.user));
-             this.router.navigate(["user"]);
+            if(data.email == "admin" && data.password == "admin"){
+              this.router.navigate(["admin"]);
+            }
+            else {
+              this.router.navigate(["user"]);
+            }
              }
              else
              this.invalidLogin = true;

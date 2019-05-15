@@ -17,9 +17,9 @@ export class ProfileService{
         return this.httpclient.get<UserProfile[]>(this.baseUrl);
     }
 
-    findProfileByUserName(): Observable<UserProfile> {        
-        return this.httpclient.get<UserProfile>(this.baseUrl + "SRK");
-
+    findProfileByEmail(): Observable<UserProfile> {      
+        let emailId=JSON.parse(sessionStorage.getItem('user')); 
+        return this.httpclient.get<UserProfile>(this.baseUrl + emailId.email);
     }
 
     

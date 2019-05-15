@@ -28,9 +28,7 @@ import { WelcomeComponent } from './welcome.component';
     FormsModule,
     UserModule,
     RegistrationModule,
-   
-
-
+  
     RouterModule.forRoot(appRoutes),
   ],
   providers: [LoginService,UserService,],

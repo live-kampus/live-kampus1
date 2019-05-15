@@ -13,7 +13,7 @@ export class ProfileComponent{
     constructor(private profileService:ProfileService,private route:ActivatedRoute){}
 
     ngOnInit(){
-        this.profileService.findProfileByUserName().subscribe((data)=>{
+        this.profileService.findProfileByEmail().subscribe((data)=>{
             console.log(data);
             this.profile=data;
         },err=>{

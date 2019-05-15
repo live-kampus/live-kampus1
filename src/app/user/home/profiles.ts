@@ -1,5 +1,6 @@
 export class UserProfile{
     userId:string;
+    email:string;
     userName:string ;
     profile: string;
     postProfile:string;
