@@ -98,14 +98,14 @@
                             </div>
                             <div class="address">
                                 <i class="fa fa-map-marker"></i>
-                                <span class="address-details"> B- block Capgemini Knowledge Park, Airoli</span>        
+                                <span class="address-details"> {{event.eventVenue}}</span>        
                             </div>
                             <div class="hosted-by">
                                 <h4 class="host">Hosted By: </h4>
-                                <span>Capgemini</span>
+                                <span>{{event.eventhostedBy}}</span>
                             </div>
                             <div class="event-btns">
-                                <button type="button" class="btn btn-primary going-btn">Going</button>
+                                <button type="button" class="btn btn-primary going-btn" (click)="btnCounter()">Going</button>
                              
                             </div>
                             <span class="count">200 people going</span>

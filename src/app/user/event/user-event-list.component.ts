@@ -54,4 +54,6 @@ export class UserEventlistComponent implements OnInit {
             this.event = data;
         })
     }
+
+    
 }

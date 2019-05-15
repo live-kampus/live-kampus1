@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProfileService } from './profile/profile.service';
 import { HomeService } from './home/home.service';
+import { EditProfileComponent } from './profile/edit-profile.component';
 
 
 
@@ -31,7 +32,8 @@ import { HomeService } from './home/home.service';
         UserEventlistComponent,
         NotificationComponent,
         ChatComponent,
-        RoomSpaceComponent
+        RoomSpaceComponent,
+        EditProfileComponent
     ],
     imports: [
         FormsModule,

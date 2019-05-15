@@ -16,14 +16,11 @@
                     <li class="nav-item">
                         <a class="nav-link recommended" href="#results" data-toggle="tab">Recommended Event</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link all" href="#results" data-toggle="tab">All</a>
-                    </li>
                 </ul>
                 <table class="table table-bordered event-table events">
                     <thead class="thead-light">
                         <tr>
-                            <th>Event Code</th>
+                            <!-- <th>Event Code</th> -->
                             <th>Event Name</th>
                             <th></th>
                             <th></th>
@@ -32,19 +29,13 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let event of events ">
-                            <td>{{event.eventId}}</td>
+                            <!-- <td>{{event.eventId}}</td> -->
                             <td>{{event.eventName}}</td>
                             <td>
                                 <button type="button" routerLink="eventdetails" class="btn btn-primary view-btn">View</button>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-primary edit-btn">Edit</button>
-                            </td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" checked>
-                                    <span class="slider round"></span>
-                                </label>
+                                <button type="button" class="btn btn-primary del" click="delbtn(event.eventName)">Delete</button>
                             </td>
                         </tr>
                     </tbody>
